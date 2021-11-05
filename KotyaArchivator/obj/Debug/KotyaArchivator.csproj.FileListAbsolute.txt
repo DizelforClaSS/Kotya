@@ -1,0 +1,9 @@
+C:\Kotya\KotyaArchivator\bin\Debug\KotyaArchivator.exe.config
+C:\Kotya\KotyaArchivator\bin\Debug\KotyaArchivator.exe
+C:\Kotya\KotyaArchivator\bin\Debug\KotyaArchivator.pdb
+C:\Kotya\KotyaArchivator\obj\Debug\KotyaArchivator.csprojAssemblyReference.cache
+C:\Kotya\KotyaArchivator\obj\Debug\KotyaArchivator.Properties.Resources.resources
+C:\Kotya\KotyaArchivator\obj\Debug\KotyaArchivator.csproj.GenerateResource.cache
+C:\Kotya\KotyaArchivator\obj\Debug\KotyaArchivator.csproj.CoreCompileInputs.cache
+C:\Kotya\KotyaArchivator\obj\Debug\KotyaArchivator.exe
+C:\Kotya\KotyaArchivator\obj\Debug\KotyaArchivator.pdb
