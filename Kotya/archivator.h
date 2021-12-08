@@ -11,7 +11,7 @@
 namespace fs = std::filesystem;
 class Archivator
 {
-    Q_OBJECT
+    //Q_OBJECT//////////////////////////////////////////////////////////////////////
     MainPart mainPartConstructor(int directoryRecords);
 private:
     int max_freqency = 16383;

@@ -5,7 +5,7 @@
 #include "Structures.h"
 class ArifmeticalCodec
 {
-    Q_OBJECT
+   ///////////////////////////////////////////////// Q_OBJECT
 private:
     void bitsPlusFollow(bool bit, int bits_to_follow, bitset<8>& temp_bits, int& ptr_of_temp_bits, vector<unsigned char>& compressed_buffer);
 

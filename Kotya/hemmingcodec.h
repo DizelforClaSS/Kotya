@@ -5,7 +5,7 @@
 #include "Structures.h"
 class HemmingCodec
 {
-    Q_OBJECT
+    //////////////////////////////////////////////////////Q_OBJECT
 public:
     HemmingCodec();
 
