@@ -3,10 +3,12 @@
 
 #include <QObject>
 #include "Structures.h"
-class ArifmeticalCodec
+class ArifmeticalCodec : QObject
 {
     Q_OBJECT
 private:
+    int max_freqency = 16383;
+
     void bitsPlusFollow(bool bit, int bits_to_follow, bitset<8>& temp_bits, int& ptr_of_temp_bits, vector<unsigned char>& compressed_buffer);
 
     void freqencyFullUpdate(vector< pair <int, unsigned char> >& vect, long long sum_of_letters);

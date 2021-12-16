@@ -14,15 +14,8 @@
 using namespace std;
 namespace fs = std::filesystem;
 
-string archiveExtention = ".kotik";
 
-uint32_t ourSignature = 0x6b6f7469; //koti
-uint32_t signature_of_LocalFileHeader = 0x04034b50;
-uint32_t signature_of_CentralDirectoryFileHeader = 0x02014b50;
-uint32_t ourEndOfArchive = 0x02014b51;
 
-vector<vector<int> > matrix(8, vector<int>(128)); //
-int max_freqency = 16383;
 
 struct MainPart
 {
