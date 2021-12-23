@@ -3,10 +3,9 @@
 
 #include <QObject>
 #include "Structures.h"
-class HemmingCodec : QObject
+class HemmingCodec
 {
-    Q_OBJECT
-    vector<vector<int>> matrix = std::vector(8,  std::vector<int>(128));
+    //////////////////////////////////////////////////////Q_OBJECT
 public:
     HemmingCodec();
 
