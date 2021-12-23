@@ -65,11 +65,11 @@ struct EndOfArchive
 
 struct arguments
 {
-    int type = 0; //
-    string archivePath;
-    string directoryPath;
-    int compression = 0;
-    int labAddition = 0;
+    int type = 0; // Что сделать с файлом
+    string archivePath; //путь куда сохранить архив
+    string directoryPath; // Путь файла для архивации
+    int compression = 0; //
+    int labAddition = 0; // Номер лабы
 };
 
 #pragma pack(push)

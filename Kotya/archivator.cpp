@@ -1,5 +1,5 @@
 #include "archivator.h"
-
+#include <QDebug>
 Archivator::Archivator()
 {
 
@@ -33,10 +33,13 @@ void Archivator::createFile(arguments mainArgs, vector<LocalFileHeader> allFiles
 
     string tempArchivePath = mainArgs.archivePath + archiveExtention;
 
-    out.open(tempArchivePath, ios::binary); // окрываем файл для записи
+    out.open(tempArchivePath, ios::out);
+    out.close();
+    out.open(tempArchivePath,  ios::out | ios::binary); // окрываем файл для записи
+    cout<<out.is_open()<<endl;
     out.write((char*)&mainPart, sizeof(mainPart));
 
-    vector<vector<int> > randPtr(mainPart.totalCentralDirectoryRecord, vector<int>()); //Количество векторов равное колиеству файлов
+    vector<vector<int>> randPtr(mainPart.totalCentralDirectoryRecord, vector<int>()); //Количество векторов равное колиеству файлов
 
     vector<unsigned char> compressedBuffer;
 
@@ -55,6 +58,8 @@ void Archivator::createFile(arguments mainArgs, vector<LocalFileHeader> allFiles
 
     if (mainArgs.labAddition == 3)
     {
+
+
         for (int i = 0; i < mainPart.totalCentralDirectoryRecord; i++)
         {
 
@@ -238,6 +243,7 @@ void Archivator::createFile(arguments mainArgs, vector<LocalFileHeader> allFiles
             }
             if (mainArgs.compression == 0)
             {
+                cout<<"Here"<<endl;
                 out.write((char*)&buffer[0], buffer.size());
             }
         }
@@ -340,6 +346,7 @@ void Archivator::unpack(arguments main_arg)
     int shiftToEndFile = 0 - sizeof(EndOfArchive);
     file.read((char*)&main_part, sizeof(main_part));
     unsigned char delimiter = 'a';
+    cout<<"HERE"<<endl;
     if (main_part.signature != ourSignature)
     {
         cout << "архив не соответствует данной программе";
@@ -400,7 +407,7 @@ void Archivator::unpack(arguments main_arg)
 
                     if (all_files.type)
                     {
-                        path_to_file = path + "\\" + erased_path_to_file;
+                        path_to_file = path + erased_path_to_file;
                         vector<unsigned char> compressed_buffer(all_files.compressedSize);
                         if (all_files.extraDataLength / sizeof(frequencyStructure) != 0)
                         {
