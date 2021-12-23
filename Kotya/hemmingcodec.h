@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include "Structures.h"
-class HemmingCodec
+class HemmingCodec : public QObject
 {
  Q_OBJECT
 public:

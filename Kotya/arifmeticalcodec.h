@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include "Structures.h"
-class ArifmeticalCodec : QObject
+class ArifmeticalCodec : public QObject
 {
     Q_OBJECT
 private:
