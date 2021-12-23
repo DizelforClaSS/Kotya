@@ -5,7 +5,7 @@
 #include "Structures.h"
 class ShenonFanoCodec : QObject
 {
-    ////////////////////////////////////////////////////////Q_OBJECT
+    Q_OBJECT
 private:
     void mapTransforming(map<unsigned char, vector<bool>> table, map<string, unsigned char>& table_for_decoding, vector< frequencyStructure> frequency);
     void stepOfAlgorithm(map<unsigned char, vector<bool>>& table, vector< frequencyStructure >& part, int start = 0, int end = 0);
