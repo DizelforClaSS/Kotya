@@ -46,8 +46,7 @@ void Archivator::createFile(arguments mainArgs, vector<LocalFileHeader> allFiles
 
     EndOfArchive end_of_archive;
 
-    int addInformationSize;
-    int addBits;
+
 
     int ptr;
     int ptrNumbers;

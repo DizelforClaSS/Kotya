@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include "Structures.h"
-class ShenonFanoCodec
+class ShenonFanoCodec : QObject
 {
     ////////////////////////////////////////////////////////Q_OBJECT
 private:

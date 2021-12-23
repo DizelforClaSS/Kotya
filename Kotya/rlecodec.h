@@ -1,9 +1,10 @@
 #ifndef RLECODEC_H
 #define RLECODEC_H
 #include "Structures.h"
-
-class RleCodec
+#include <QObject>
+class RleCodec : QObject
 {
+    Q_OBJECT
 public:
     RleCodec();
     void encode(vector<unsigned char> buffer, vector<unsigned char>& compressed_buffer, unsigned char& delimiter);
