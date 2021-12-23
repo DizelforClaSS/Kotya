@@ -19,40 +19,96 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-int test(int argc, char *argv[])
-{
-
-}
-
 void MainWindow::on_ButtonFindFile_clicked()
 {
-    QString fileName = QFileDialog::getOpenFileName(this,
+    fileName = QFileDialog::getOpenFileName(this,
                             QString::fromUtf8("Открыть файл"),
                             QDir::currentPath());
-
-    QRadioButton *selectedFile = new QRadioButton(fileName, this);
-    connect(selectedFile, &QPushButton::clicked, this, &MainWindow::on_radioButton_clicked);
-    ui->verticalLayout->addWidget(selectedFile);
-}
-
-void MainWindow::on_radioButton_clicked()
-{
-    QRadioButton *selectedSender = qobject_cast<QRadioButton*>(sender());
-    if(selectedSender->isChecked())
-    {
-        fileName = selectedSender;
-        cout << fileName->text().toStdString() << endl;
-        ui->label->setText(fileName->text());
-     }
-    else
-    {
-        ui->label->clear();
-    }
-
+    ui->label_file->setText(fileName);
 }
 
 void MainWindow::on_ButtonPack_clicked()
 {
-    std::string str = fileName->text().toStdString();
+    if (chekExi() != 1)
+    {
+        //здесь вызов архивации
+    }
+
+}
+
+
+void MainWindow::on_ButtonStore_clicked()
+{
+    if (chekExi() != 1)
+    {
+        //здесь вызов архивации
+    }
+}
+
+void MainWindow::on_ButtonUnpack_clicked()
+{
+    if (chekExi() != 1)
+    {
+        //здесь вызов архивации
+    }
+}
+
+int MainWindow::chekExi ()
+{
+    int f = 0;
+    if (ui->label_file->text() == "")
+    {
+        ui->info->setText("не задан файл");
+        f = 1;
+    }
+    if (ui->label_folder->text() == "")
+    {
+        ui->info->setText("не задана папка");
+        f = 1;
+    }
+    return f;
+}
+
+void MainWindow::on_Button_3_clicked()
+{
+    numLab = 3;
+}
+
+
+void MainWindow::on_Button_4_clicked()
+{
+    numLab = 4;
+}
+
+
+void MainWindow::on_Button_5_clicked()
+{
+    numLab = 5;
+}
+
+
+void MainWindow::on_Button_6_clicked()
+{
+    numLab = 6;
+}
+
+
+
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->info->setText("не задана папка");
+}
+
+
+void MainWindow::on_ButtonFindFolder_clicked()
+{
+    fileDir = QFileDialog::getExistingDirectory(this,
+                                                 QString::fromUtf8("Открыть папку"),
+                                                 QDir::currentPath(),
+                                                 QFileDialog::ShowDirsOnly
+                                                 | QFileDialog::DontResolveSymlinks);
+    ui->label_folder->setText(fileDir);
 }
 

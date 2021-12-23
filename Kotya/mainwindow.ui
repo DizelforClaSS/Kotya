@@ -23,7 +23,14 @@
       <item>
        <widget class="QPushButton" name="ButtonFindFile">
         <property name="text">
-         <string>Обзор</string>
+         <string>Выбор файла</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ButtonFindFolder">
+        <property name="text">
+         <string>Выбор папки</string>
         </property>
        </widget>
       </item>
@@ -41,19 +48,83 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="ButtonStore">
+        <property name="text">
+         <string>Какие файлы содержатся?</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QRadioButton" name="Button_3">
+        <property name="text">
+         <string>Лаб3</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="Button_4">
+        <property name="text">
+         <string>Лаб4</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="Button_5">
+        <property name="text">
+         <string>Лаб5</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="Button_6">
+        <property name="text">
+         <string>Лаб6</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
     <item>
      <layout class="QVBoxLayout" name="verticalLayout">
-      <property name="bottomMargin">
-       <number>250</number>
-      </property>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Полный путь архивируемого файла:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_file">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Полный путь к папке, куда будет сохранен файл:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_folder">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
     <item>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="info">
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
       </property>
      </widget>
     </item>
