@@ -11,6 +11,7 @@
 #include <bitset>
 #include <map>
 #include <math.h>
+ #include "Windows.h"
 using namespace std;
 namespace fs = std::filesystem;
 

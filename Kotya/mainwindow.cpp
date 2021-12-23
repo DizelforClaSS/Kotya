@@ -4,6 +4,7 @@
 #include <QFileDialog>
 #include <QRadioButton>
 #include <QApplication>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -52,6 +53,7 @@ void MainWindow::on_ButtonUnpack_clicked()
         //здесь вызов архивации
     }
 }
+
 
 int MainWindow::chekExi ()
 {

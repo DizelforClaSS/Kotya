@@ -16,9 +16,9 @@ class Archivator : QObject
     MainPart mainPartConstructor(int directoryRecords);
 private:
     int max_freqency = 16383;
-    LocalFileHeader fileHeaderConstructor(string fileName, bool isFile, int typeCompression, string fileFullPath = " ");
+    LocalFileHeader fileHeaderConstructor(std::string fileName, bool isFile, int typeCompression, std::string fileFullPath = " ");
 
-    string archiveExtention = ".kotik";
+    std::string archiveExtention = ".kotik";
 
     uint32_t ourSignature = 0x6b6f7469; //koti
     uint32_t signature_of_LocalFileHeader = 0x04034b50;
@@ -29,7 +29,7 @@ private:
     //int max_freqency = 16383;
 public:
     Archivator();
-    void createFile(arguments mainArg, vector<LocalFileHeader> allFiles, vector<string> filePaths, vector<string>  erasedFilePaths, MainPart mainPart);
+    void createFile(arguments mainArg, std::vector<LocalFileHeader> allFiles, std::vector<std::string> filePaths, std::vector<std::string>  erasedFilePaths, MainPart mainPart);
     void pack(arguments main_arg);
     void unpack(arguments main_arg);
     void testArchive(arguments main_arg);

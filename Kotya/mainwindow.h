@@ -20,25 +20,19 @@ public slots:
     void parse();
     void on_ButtonFindFile_clicked();
 
-       void on_radioButton_clicked();
 
        int chekExi ();
 
-       void on_DeleteWidButton_clicked();
+
 
        void on_ButtonPack_clicked();
 
-       void on_SelectName();
 
        void on_ButtonStore_clicked();
 
        void on_ButtonUnpack_clicked();
 
-       void on_pushButton_3_clicked();
 
-       void on_pushButton_4_clicked();
-
-       void on_pushButton_2_clicked();
 
        void on_Button_3_clicked();
 
