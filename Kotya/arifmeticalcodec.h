@@ -5,7 +5,7 @@
 #include "Structures.h"
 class ArifmeticalCodec : QObject
 {
-   ///////////////////////////////////////////////// Q_OBJECT
+    Q_OBJECT
 private:
     int max_freqency = 16383;
 
