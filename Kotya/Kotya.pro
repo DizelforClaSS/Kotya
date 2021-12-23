@@ -9,22 +9,22 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    #archivator.cpp \
-   # arifmeticalcodec.cpp \
-   # hemmingcodec.cpp \
+    archivator.cpp \
+    arifmeticalcodec.cpp \
+    hemmingcodec.cpp \
     main.cpp \
     mainwindow.cpp \
-    #rlecodec.cpp \
-    #shenonfanocodec.cpp
+    rlecodec.cpp \
+    shenonfanocodec.cpp
 
 HEADERS += \
-    #Structures.h \
-    #archivator.h \
-   # arifmeticalcodec.h \
-    #hemmingcodec.h \
+    Structures.h \
+    archivator.h \
+    arifmeticalcodec.h \
+    hemmingcodec.h \
     mainwindow.h \
-   # rlecodec.h \
-    #shenonfanocodec.h
+    rlecodec.h \
+    shenonfanocodec.h
 
 FORMS += \
     mainwindow.ui
