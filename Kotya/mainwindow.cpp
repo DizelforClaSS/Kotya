@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     archivator = new Archivator();
     connect(ui->folderButton, SIGNAL(clicked()), this, SLOT(folderButtonClicked()));
-//    parse();
+   // parse();
 
 }
 
@@ -34,8 +34,8 @@ void MainWindow::on_ButtonPack_clicked()
     if (chekExi() != 1)
     {
         //здесь вызов архивации
-        args.archivePath = ui->label_file->text().toStdString();// "E:\\encode_files.kotik"; //pack - директорию unpack - указываемым сам файл распакови
-        args.directoryPath = ui->label_folder->text().toStdString(); //наоборот
+        args.archivePath = ui->label_folder->text().toStdString();// "E:\\encode_files.kotik"; //pack - директорию unpack - указываемым сам файл распакови
+        args.directoryPath = ui->label_file->text().toStdString(); //наоборот
         args.compression = compression;
         args.labAddition = numLab;
         archivator->pack(args);
@@ -48,7 +48,9 @@ void MainWindow::on_ButtonStore_clicked()
 {
     if (chekExi() != 1)
     {
-        //здесь вызов архивации
+        args.archivePath = ui->label_file->text().toStdString();
+        args.directoryPath = ui->label_folder->text().toStdString();
+        archivator->printFiles(args);
     }
 }
 
@@ -145,12 +147,12 @@ void MainWindow::folderButtonClicked()
 void MainWindow::parse()
 {
   cout<<"Start"<<endl;
-  args.archivePath = "E:\\encode_files.kotik"; //pack - директорию unpack - указываемым сам файл распакови
-  args.directoryPath = "E:\\decode"; //наоборот
+  args.archivePath = "E:\\A_TEST"; //pack - директорию unpack - указываемым сам файл распакови
+  args.directoryPath = "C:\\Kotya\\TestFiles\\test.txt"; //наоборот
   args.compression = 6;
   args.labAddition = 0;
   args.type = 2;
-  archivator->unpack(args);
+  archivator->pack(args);
 }
 
 

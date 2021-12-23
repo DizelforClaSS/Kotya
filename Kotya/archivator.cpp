@@ -30,8 +30,11 @@ MainPart Archivator::mainPartConstructor(int directoryRecords)
 void Archivator::createFile(arguments mainArgs, vector<LocalFileHeader> allFiles, vector<string> filePaths, vector<string>  erasedFilePaths, MainPart mainPart)
 {
     std::ofstream out;          // поток для записи
-
-    string tempArchivePath = mainArgs.archivePath + archiveExtention;
+    string directory = mainArgs.directoryPath;
+    int govno = directory.find_last_of("/");
+    cout<<govno;
+    string name = directory.substr(govno); //Взяли имя папки или файла
+    string tempArchivePath = mainArgs.archivePath + "/" + name + archiveExtention;
 
     out.open(tempArchivePath, ios::out);
     out.close();
@@ -276,8 +279,9 @@ void Archivator::pack(arguments mainArg)
     vector<string>  erasedPathFile;
 
     bool flag = true;
-
-    directory.erase(directory.find_last_of("\\")); //Взяли имя папки или файла
+    int govno = directory.find_last_of("/");
+    cout<<govno;
+    directory.erase(govno); //Взяли имя папки или файла
     mainDirectory.erase(0, mainDirectory.find_first_not_of(directory)); //Записываем весь путь до папки (невключая саму папку)
 
     filePath.push_back(fullPath);
@@ -346,7 +350,7 @@ void Archivator::unpack(arguments main_arg)
     int shiftToEndFile = 0 - sizeof(EndOfArchive);
     file.read((char*)&main_part, sizeof(main_part));
     unsigned char delimiter = 'a';
-    cout<<"HERE"<<endl;
+    //cout<<"HERE"<<endl;
     if (main_part.signature != ourSignature)
     {
         cout << "архив не соответствует данной программе";
@@ -585,9 +589,10 @@ void  Archivator:: printFiles(arguments mainArgs)
     {
         file.seekg(tempHeader[i].localFileHeaderOffset, ios::beg); //Перемещаемся к инфорамции о файле
         file.read((char*)&allFiles, sizeof(allFiles)); //считываем инфорамцию о файле
-        //        erasedFilePath.resize(allFiles.filenameLength); //задаем строке длину по имени файла
-        //        file.read((char*)erasedFilePath.data(), allFiles.filenameLength); //строку записываем имя файла
-        //        cout << erasedFilePath << endl;
+        string erasedFilePath;
+                erasedFilePath.resize(allFiles.filenameLength); //задаем строке длину по имени файла
+                file.read((char*)erasedFilePath.data(), allFiles.filenameLength); //строку записываем имя файла
+                cout << erasedFilePath << endl;
     }
 };
 
