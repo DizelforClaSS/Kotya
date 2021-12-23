@@ -43,8 +43,11 @@ public slots:
        void on_Button_6_clicked();
 
        void on_ButtonFindFolder_clicked();
-
+       void folderButtonClicked();
        void on_pushButton_clicked();
+
+private slots:
+       void on_Button_7_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -53,6 +56,7 @@ private:
     QString fileName;
         QString fileDir;
         int numLab = 0;
+        int compression = 0;
 
 };
 #endif // MAINWINDOW_H

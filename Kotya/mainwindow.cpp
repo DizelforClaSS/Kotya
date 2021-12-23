@@ -11,7 +11,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     archivator = new Archivator();
-    parse();
+    connect(ui->folderButton, SIGNAL(clicked()), this, SLOT(folderButtonClicked()));
+//    parse();
 
 }
 
@@ -33,6 +34,11 @@ void MainWindow::on_ButtonPack_clicked()
     if (chekExi() != 1)
     {
         //здесь вызов архивации
+        args.archivePath = ui->label_file->text().toStdString();// "E:\\encode_files.kotik"; //pack - директорию unpack - указываемым сам файл распакови
+        args.directoryPath = ui->label_folder->text().toStdString(); //наоборот
+        args.compression = compression;
+        args.labAddition = numLab;
+        archivator->pack(args);
     }
 
 }
@@ -50,6 +56,12 @@ void MainWindow::on_ButtonUnpack_clicked()
 {
     if (chekExi() != 1)
     {
+        cout<<"Start"<<endl;
+        args.archivePath = ui->label_file->text().toStdString();// "E:\\encode_files.kotik"; //pack - директорию unpack - указываемым сам файл распакови
+        args.directoryPath = ui->label_folder->text().toStdString()+"\\"; //наоборот
+        args.compression = compression;
+        args.labAddition = numLab;
+        archivator->unpack(args);
         //здесь вызов архивации
     }
 }
@@ -74,24 +86,29 @@ int MainWindow::chekExi ()
 void MainWindow::on_Button_3_clicked()
 {
     numLab = 3;
+    compression = 0;
+
 }
 
 
 void MainWindow::on_Button_4_clicked()
 {
     numLab = 4;
+    compression = 1;
 }
 
 
 void MainWindow::on_Button_5_clicked()
 {
-    numLab = 5;
+    numLab = 3;
+    compression = 3;
 }
 
 
 void MainWindow::on_Button_6_clicked()
 {
     numLab = 6;
+    compression = 5;
 }
 
 
@@ -114,6 +131,16 @@ void MainWindow::on_ButtonFindFolder_clicked()
     ui->label_folder->setText(fileDir);
 }
 
+void MainWindow::folderButtonClicked()
+{
+    fileDir = QFileDialog::getExistingDirectory(this,
+                                                 QString::fromUtf8("Открыть папку"),
+                                                 QDir::currentPath(),
+                                                 QFileDialog::ShowDirsOnly
+                                                 | QFileDialog::DontResolveSymlinks);
+    ui->label_file->setText(fileDir);
+}
+
 
 void MainWindow::parse()
 {
@@ -124,5 +151,12 @@ void MainWindow::parse()
   args.labAddition = 0;
   args.type = 2;
   archivator->unpack(args);
+}
+
+
+void MainWindow::on_Button_7_clicked()
+{
+    numLab = 7;
+    compression = 6;
 }
 

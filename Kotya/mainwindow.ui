@@ -28,9 +28,16 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="folderButton">
+        <property name="text">
+         <string>Выбор папки для архивации</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="ButtonFindFolder">
         <property name="text">
-         <string>Выбор папки</string>
+         <string>Выбор пути сохранения</string>
         </property>
        </widget>
       </item>
@@ -84,6 +91,13 @@
        <widget class="QRadioButton" name="Button_6">
         <property name="text">
          <string>Лаб6</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="Button_7">
+        <property name="text">
+         <string>Лаб 7</string>
         </property>
        </widget>
       </item>
