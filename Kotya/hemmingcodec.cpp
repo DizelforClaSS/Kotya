@@ -120,6 +120,7 @@ void HemmingCodec::encoding(vector<unsigned char> buffer, vector<unsigned char>&
         addinationallByte(additionalByte, tempBuffer);
         compressedBuffer.push_back(additionalByte);
         //По итогу считали 7 байт и 8 байтом выставляем как управляющий всей строкой
+
     }
 }
 //Показывают где ошибка, но фикса нет

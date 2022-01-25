@@ -102,7 +102,7 @@ void MainWindow::on_Button_4_clicked()
 
 void MainWindow::on_Button_5_clicked()
 {
-    numLab = 3;
+    numLab = 5;
     compression = 3;
 }
 
